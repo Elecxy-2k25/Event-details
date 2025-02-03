@@ -23,14 +23,7 @@ header {
 .logo {
     width: 60px;
     height: 60px;
-}
-
-.clg-name {
-    font-size: 1.5em;
-    font-weight: bold;
-    font-family: 'Michroma', sans-serif;
-    text-transform: uppercase;
-    color: #00ffcc;
+    background-image: url('assets/images/logo.jpg');
 }
 
 /* Event Title */
@@ -162,6 +155,7 @@ footer a:hover {
     transform: rotate(0deg);
     position: absolute;
     animation: flyRocket 4s ease-in-out forwards;
+    background-image: url('assets/images/rocket.png');
 }
 
 @keyframes flyRocket {
@@ -287,6 +281,7 @@ footer a:hover {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    background-image: url('assets/images/map.jpeg');
 }
 
 /* Responsive Design */
