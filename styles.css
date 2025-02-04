@@ -33,6 +33,15 @@ header {
     margin: 10px 0;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
+.clg-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00b4d8, #7209b7, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8), 0px 0px 20px rgba(0, 180, 216, 0.6);
+}
 
 /* Tagline */
 .tagline {
@@ -85,17 +94,15 @@ header {
 }
 
 .event-card {
+    text-align: center;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    border: 2px solid #00ffcc;
-    color: #ffffff;
-    cursor: pointer;
-    width: 90%;
-    max-width: 300px;
+    margin: 10px auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    max-width: 400px;
 }
+
 
 .event-card:hover {
     transform: scale(1.05);
