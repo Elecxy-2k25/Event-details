@@ -34,13 +34,11 @@ header {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 .clg-name {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
     font-size: 1.8em;
     font-weight: bold;
-    background: linear-gradient(90deg, #00b4d8, #7209b7, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8), 0px 0px 20px rgba(0, 180, 216, 0.6);
+    color:aqua; /* Neon cyan color */
+    text-shadow: 0 0 8px rgba(0, 204, 255, 0.8), 0 0 16px rgba(0, 204, 255, 0.6); /* Glow effect */
 }
 
 /* Tagline */
