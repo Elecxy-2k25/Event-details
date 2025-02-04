@@ -273,11 +273,13 @@ footer a:hover {
 /* Route Map */
 .route-map-container {
     padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
+    background-color: #212121;
     border-radius: 10px;
-    margin: 30px auto;
+    color: #fff;
     width: 90%;
-    max-width: 800px;
+    max-width: 700px;
+    margin: 20px auto;
+    text-align: center;
 }
 
 .route-map-img {
@@ -286,7 +288,7 @@ footer a:hover {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    background-image: url('assets/images/map.jpeg');
+    background-image: url('assets/images/route_map.png');
 }
 
 /* Responsive Design */
