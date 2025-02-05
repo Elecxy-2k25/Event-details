@@ -6,9 +6,40 @@
     <title>Technical Events - ELECXY-2K25</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Michroma&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Astronaut Animation Container */
+        #astronaut-container {
+            position: fixed;
+            top: -200px; /* Start from above */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 200px;
+            z-index: 1000;
+            animation: fall 3s ease-in-out forwards;
+        }
+
+        /* Animation: Astronaut falls down */
+        @keyframes fall {
+            0% { top: -200px; opacity: 1; }
+            80% { top: 60%; opacity: 1; }
+            100% { top: 75%; opacity: 0; }
+        }
+
+        /* Hide astronaut after animation */
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Astronaut Animation -->
+    <div id="astronaut-container">
+        <img src="assets/images/astronaut.jpg" alt="Astronaut Landing" width="100%">
+    </div>
 
     <header class="d-flex align-items-center justify-content-between p-3 bg-dark bg-opacity-75">
         <div class="d-flex align-items-center">
@@ -66,7 +97,7 @@
             <div class="col-md-4 mb-4">
                 <div class="card event-detail-card">
                     <div class="card-body">
-                        <h3 class="card-title">Signal Sync </h3>
+                        <h3 class="card-title">Signal Sync</h3>
                         <p class="card-text">A word-guessing game where participants work in pairs to communicate technical terms creatively. One person gives hints using related words without saying the actual word, while their partner guesses it. This event tests communication skills, vocabulary, and quick thinking.</p>
                         <p><strong>Rounds:</strong> 2</p>
                         <p><strong>Participants:</strong> Team (Max 2)</p>
@@ -80,7 +111,7 @@
                 <div class="card event-detail-card">
                     <div class="card-body">
                         <h3 class="card-title">GalaxIQ - Interview based Technical Quiz</h3>
-                        <p class="card-text">A mock interview-based event where participants go through multiple interview rounds simulating real-world hiring processes. They experience technical and HR questions, group discussions, and problem-solving challenges. The best performer is selected based on their confidence, knowledge, and adaptability.</p>
+                        <p class="card-text">A mock interview-based event where participants go through multiple interview rounds simulating real-world hiring processes. They experience technical and HR questions, group discussions, and problem-solving challenges. The best performer is selected based on their confidence, knowledge, and adaptability.</p>
                         <p><strong>Rounds:</strong> 3</p>
                         <p><strong>Participants:</strong> Individual </p>
                         <p><strong>Time:</strong> 11:30 PM - 01:15 PM</p>
@@ -99,16 +130,13 @@
         <p>Faculty Coordinators: Dr. T. Prathiba, S. Alwyn Rajiv</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const welcomeMsg = document.getElementById("welcome-msg");
-            if (welcomeMsg) {
-                welcomeMsg.style.fontFamily = "Orbitron, sans-serif";
-                welcomeMsg.style.fontSize = "1.5em";
-                welcomeMsg.style.color = "#ffcc00";
-                welcomeMsg.style.fontWeight = "bold";
-            }
+            const astronaut = document.getElementById("astronaut-container");
+
+            setTimeout(() => {
+                astronaut.style.animation = "fadeOut 1s forwards";
+            }, 3000);
         });
     </script>
 </body>
