@@ -17,15 +17,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 4000);
 });
 document.addEventListener("DOMContentLoaded", function () {
-    const chatbotContainer = document.querySelector(".chatbot-container");
-    const chatbotToggleBtn = document.getElementById("chatbot-toggle-btn");
+    const chatbotLogo = document.getElementById("chatbot-logo");
+    const chatbotContainer = document.getElementById("chatbot-container");
     const chatbotCloseBtn = document.getElementById("chatbot-close-btn");
     const chatbotSendBtn = document.getElementById("chatbot-send-btn");
     const chatbotInput = document.getElementById("chatbot-input");
     const chatbotMessages = document.getElementById("chatbot-messages");
 
     // Toggle chatbot visibility
-    chatbotToggleBtn.addEventListener("click", () => {
+    chatbotLogo.addEventListener("click", () => {
         chatbotContainer.classList.toggle("active");
     });
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (lowerCaseMessage.includes("non-technical events")) {
             return "Non-technical events include Stellar Frames, Zero Gravity Games, Galactic Detective, and Nebula Recall.";
         } else if (lowerCaseMessage.includes("date") || lowerCaseMessage.includes("when")) {
-            return "The event will take place on [04.03.2025].";
+            return "The event will take place on [Insert Event Date Here].";
         } else if (lowerCaseMessage.includes("contact")) {
             return "For inquiries, contact us at elecxy2k25@gmail.com.";
         } else {
