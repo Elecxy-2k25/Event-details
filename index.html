@@ -167,146 +167,51 @@
             }
         });
     </script>
-    <!-- Chatbot Button -->
-<button id="chatbot-btn">
-    <img src="assets/images/chatbot-icon.png" alt="Chatbot">
-</button>
-
-<!-- Chatbot Container -->
-<div id="chatbot-container">
-    <div id="chatbot-header">
-        <span>ELECXY Bot</span>
-        <button id="close-chatbot">&times;</button>
+      <div class="chatbot-container">
+            <div class="chatbot">
+                <div class="chat-header">ELECXY-2K25 AI Chatbot</div>
+                <div class="chat-body" id="chat-body">
+                    <div class="chat-message bot">Hello! Ask me anything about ELECXY-2K25.</div>
+                </div>
+                <input type="text" id="chat-input" placeholder="Type your question here...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
     </div>
-    <div id="chatbot-messages"></div>
-    <input type="text" id="chatbot-input" placeholder="Ask me about ELECXY-2K25...">
-    <button id="chatbot-send">Send</button>
-</div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const chatbotBtn = document.getElementById("chatbot-btn");
-        const chatbotContainer = document.getElementById("chatbot-container");
-        const closeChatbot = document.getElementById("close-chatbot");
-        const chatbotMessages = document.getElementById("chatbot-messages");
-        const chatbotInput = document.getElementById("chatbot-input");
-        const chatbotSend = document.getElementById("chatbot-send");
-
+    <script>
         const responses = {
-            "what is elecxy-2k25": "ELECXY-2K25 is a national-level symposium organized by the ECE Department.",
-            "who can participate": "Students from any engineering or technology background can participate.",
-            "what are the events": "ELECXY-2K25 has both technical and non-technical events, including Paper Way Galaxy, Star Tech Expo, and more.",
-            "who are the chief guests": "We have distinguished guests from ISRO and Tesla India as our chief guests.",
-            "how to register": "You can register for ELECXY-2K25 by clicking the 'Register Now' button on our webpage."
+            "what is elecxy-2k25?": "ELECXY-2K25 is an annual electronics fest featuring innovative projects, workshops, and competitions.",
+            "where is elecxy-2k25 held?": "It is held at Kamaraj College of Engineering and Technology, Madurai.",
+            "who can participate?": "Students and enthusiasts from any college can participate in ELECXY-2K25 events.",
+            "what events are there?": "ELECXY-2K25 features hackathons, robotics contests, paper presentations, and tech workshops."
         };
 
-        chatbotBtn.addEventListener("click", () => chatbotContainer.style.display = "block");
-        closeChatbot.addEventListener("click", () => chatbotContainer.style.display = "none");
-
-        chatbotSend.addEventListener("click", () => {
-            let userMessage = chatbotInput.value.toLowerCase().trim();
-            if (userMessage === "") return;
+        function sendMessage() {
+            let input = document.getElementById("chat-input").value.toLowerCase().trim();
+            if (!input) return;
             
-            chatbotMessages.innerHTML += `<div class='user-message'>${userMessage}</div>`;
-            chatbotInput.value = "";
+            let chatBody = document.getElementById("chat-body");
+            let userMessage = document.createElement("div");
+            userMessage.classList.add("chat-message", "user");
+            userMessage.innerText = input;
+            chatBody.appendChild(userMessage);
+            document.getElementById("chat-input").value = "";
+            
+            let botMessage = document.createElement("div");
+            botMessage.classList.add("chat-message", "bot");
+            
+            if (responses[input]) {
+                botMessage.innerText = responses[input];
+            } else {
+                botMessage.innerText = "I'm not sure about that. Can you ask in a different way?";
+            }
+            
+            chatBody.appendChild(botMessage);
+        }
+    </script>
 
-            setTimeout(() => {
-                let response = responses[userMessage] || "I'm sorry, I can only answer questions about ELECXY-2K25.";
-                chatbotMessages.innerHTML += `<div class='bot-message'>${response}</div>`;
-                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-            }, 800);
-        });
-    });
-</script>
 
-<style>
-    #chatbot-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #007bff;
-        border: none;
-        border-radius: 50%;
-        padding: 10px;
-        cursor: pointer;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    #chatbot-btn img {
-        width: 40px;
-        height: 40px;
-    }
-
-    #chatbot-container {
-        position: fixed;
-        bottom: 80px;
-        right: 20px;
-        width: 300px;
-        background: #333;
-        color: white;
-        border-radius: 10px;
-        display: none;
-        flex-direction: column;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    #chatbot-header {
-        background: #007bff;
-        padding: 10px;
-        font-weight: bold;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    #close-chatbot {
-        background: transparent;
-        border: none;
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-    }
-
-    #chatbot-messages {
-        padding: 10px;
-        height: 200px;
-        overflow-y: auto;
-    }
-
-    .user-message {
-        text-align: right;
-        background: #007bff;
-        color: white;
-        padding: 5px;
-        border-radius: 5px;
-        margin: 5px 0;
-    }
-
-    .bot-message {
-        text-align: left;
-        background: #666;
-        color: white;
-        padding: 5px;
-        border-radius: 5px;
-        margin: 5px 0;
-    }
-
-    #chatbot-input {
-        width: 100%;
-        padding: 8px;
-        border: none;
-        border-top: 1px solid #555;
-        outline: none;
-    }
-
-    #chatbot-send {
-        width: 100%;
-        background: #007bff;
-        color: white;
-        border: none;
-        padding: 8px;
-        cursor: pointer;
-    }
-</style>
 
 </body>
 </html>
