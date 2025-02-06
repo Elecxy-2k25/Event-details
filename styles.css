@@ -305,10 +305,32 @@ footer a:hover {
     .clg-name {
         font-size: 1.2em;
     }
-    /* Chatbot Styles */
-.chatbot-container {
+/* Chatbot Logo Styles */
+.chatbot-logo {
     position: fixed;
     bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #66ccff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.chatbot-logo img {
+    width: 70%;
+    height: auto;
+}
+
+/* Chatbot Container Styles */
+.chatbot-container {
+    position: fixed;
+    bottom: 90px;
     right: 20px;
     width: 300px;
     background-color: #1e1e2f;
@@ -385,24 +407,4 @@ footer a:hover {
     margin-left: 10px;
     border-radius: 5px;
     cursor: pointer;
-}
-
-#chatbot-toggle-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #66ccff;
-    color: #1e1e2f;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 14px;
-    z-index: 1000;
-}
-
-    .event-card-container {
-        grid-template-columns: 1fr;
-    }
 }
