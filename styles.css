@@ -290,58 +290,42 @@ footer a:hover {
     background-image: url('assets/images/route_map.png');
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .event-title {
-        font-size: 2.5em;
-    }
-
-    .clg-name {
-        font-size: 1.2em;
-    }
-}
-/* Countdown Animation */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.7;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+/* Countdown Container */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between boxes */
+    margin-top: 20px;
 }
 
-.animate-countdown {
-    animation: pulse 1.5s infinite;
-}
-/* Countdown Box Styles */
+/* Countdown Box */
 .countdown-box {
     background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
     border: 2px solid #ffcc00; /* Yellow border */
     border-radius: 15px; /* Rounded corners */
     padding: 20px;
-    display: inline-block;
+    width: 120px; /* Fixed width for each box */
+    text-align: center;
     box-shadow: 0 0 20px rgba(255, 204, 0, 0.6); /* Glowing effect */
     animation: glow 2s infinite alternate; /* Glow animation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Countdown Timer Text */
-.countdown-timer {
+/* Countdown Number */
+.countdown-number {
     font-family: 'Orbitron', sans-serif; /* Futuristic font */
     font-size: 2.5rem;
-    letter-spacing: 2px;
     color: #ffcc00; /* Yellow text */
     text-shadow: 0 0 10px rgba(255, 204, 0, 0.8); /* Text glow */
+}
+
+/* Countdown Label */
+.countdown-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #ffffff; /* White text */
+    margin-top: 10px;
+    text-transform: uppercase;
 }
 
 /* Glow Animation */
@@ -357,5 +341,5 @@ footer a:hover {
 /* Hover Effect on Countdown Box */
 .countdown-box:hover {
     transform: scale(1.05); /* Slightly enlarge on hover */
-    transition: transform 0.3s ease;
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.8);
 }
