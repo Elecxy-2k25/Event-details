@@ -21,24 +21,23 @@ function updateCountdown() {
     const now = new Date().getTime();
     const timeLeft = eventDate - now;
 
-    if (timeLeft < 0) {
-        document.getElementById("countdown").innerHTML = "Event Started!";
-        return;
-    }
-
     const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
     const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-    document.getElementById("countdown").innerHTML = `
-        <span class="countdown-digit">${days}d</span> 
-        <span class="countdown-digit">${hours}h</span> 
-        <span class="countdown-digit">${minutes}m</span> 
-        <span class="countdown-digit">${seconds}s</span> 
-    `;
+    const countdownElement = document.getElementById("countdown");
+
+    countdownElement.innerHTML = 
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    countdownElement.classList.add("countdown-timer");
+
+    if (timeLeft < 0) {
+        countdownElement.innerHTML = "Event Started!";
+    }
 }
 
 setInterval(updateCountdown, 1000);
-updateCountdown();
+updateCountdown(); // Run once on page load
 
