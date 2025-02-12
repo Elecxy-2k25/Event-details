@@ -55,37 +55,26 @@
                 </div>
             </div>
         </div>
-<div class="container text-center mt-4">
-    <h2 class="text-warning">Countdown to ELECXY-2K25</h2>
-    <div id="countdown" class="countdown-timer display-4 text-light"></div>
-</div>
+<div class="countdown-container">
+        <div class="countdown-box">
+            <span id="days" class="countdown-number">00</span>
+            <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-box">
+            <span id="hours" class="countdown-number">00</span>
+            <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-box">
+            <span id="minutes" class="countdown-number">00</span>
+            <span class="countdown-label">Minutes</span>
+        </div>
+        <div class="countdown-box">
+            <span id="seconds" class="countdown-number">00</span>
+            <span class="countdown-label">Seconds</span>
+        </div>
+    </div>
 
-<script>
-    function updateCountdown() {
-        const eventDate = new Date("March 6, 2025 00:00:00").getTime();
-        const now = new Date().getTime();
-        const timeLeft = eventDate - now;
-
-        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-        document.getElementById("countdown").innerHTML = 
-            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-        if (timeLeft < 0) {
-            document.getElementById("countdown").innerHTML = "Event Started!";
-        }
-    }
-
-    setInterval(updateCountdown, 1000);
-</script>
-
-
-
-
-        <div class="row mt-4 justify-content-center">
+    <div class="row mt-4 justify-content-center">
             <div class="col-md-5 col-10">
                 <div class="event-card" onclick="window.location.href='tech page.html'">
                     <h3>Technical Events</h3>
