@@ -15,53 +15,15 @@ header {
     padding: 15px 5%;
     background: rgba(0, 0, 0, 0.8);
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
 }
 
-.college-name-container {
-    flex: 1; /* Takes up remaining space */
-}
-
-.clg-name {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: aqua;
-    text-shadow: 0 0 8px rgba(0, 204, 255, 0.8), 0 0 16px rgba(0, 204, 255, 0.6);
-    text-align: left; /* Left-align the college name */
-    white-space: normal; /* Allow text to wrap */
-    line-height: 1.2; /* Adjust line height for better readability */
-}
-
-.welcome-msg {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.2em;
-    color: #ffcc00;
-    text-align: right; /* Right-align the welcome message */
-    white-space: nowrap; /* Prevent the welcome message from wrapping */
-}
-
-/* Mobile View */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the left */
-        text-align: left; /* Left-align text */
-    }
-
-    .clg-name {
-        font-size: 1.2em; /* Reduce font size for mobile */
-        line-height: 1.2; /* Adjust line height */
-        white-space: normal; /* Allow text to wrap */
-        margin-bottom: 10px; /* Add space between college name and welcome message */
-    }
-
-    .welcome-msg {
-        font-size: 1em; /* Reduce font size for mobile */
-        text-align: left; /* Left-align the welcome message */
-        white-space: normal; /* Allow text to wrap */
-    }
+.logo {
+    width: 60px;
+    height: 60px;
+    background-image: url('assets/images/logo.jpg');
 }
 
 /* Event Title */
@@ -71,7 +33,13 @@ header {
     margin: 10px 0;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
-
+.clg-name {
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    font-size: 1.8em;
+    font-weight: bold;
+    color:aqua; /* Neon cyan color */
+    text-shadow: 0 0 8px rgba(0, 204, 255, 0.8), 0 0 16px rgba(0, 204, 255, 0.6); /* Glow effect */
+}
 
 /* Tagline */
 .tagline {
