@@ -324,3 +324,38 @@ footer a:hover {
 .animate-countdown {
     animation: pulse 1.5s infinite;
 }
+/* Countdown Box Styles */
+.countdown-box {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    border: 2px solid #ffcc00; /* Yellow border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    display: inline-block;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.6); /* Glowing effect */
+    animation: glow 2s infinite alternate; /* Glow animation */
+}
+
+/* Countdown Timer Text */
+.countdown-timer {
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: #ffcc00; /* Yellow text */
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.8); /* Text glow */
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 40px rgba(255, 204, 0, 0.9);
+    }
+}
+
+/* Hover Effect on Countdown Box */
+.countdown-box:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    transition: transform 0.3s ease;
+}
