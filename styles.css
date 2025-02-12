@@ -16,7 +16,7 @@ header {
     background: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between; /* Ensures space between left and right content */
     gap: 15px;
 }
 
@@ -26,6 +26,35 @@ header {
     background-image: url('assets/images/logo.jpg');
 }
 
+.clg-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: aqua;
+    text-shadow: 0 0 8px rgba(0, 204, 255, 0.8), 0 0 16px rgba(0, 204, 255, 0.6);
+}
+
+.welcome-msg {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2em;
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
+        text-align: left;
+    }
+
+    .welcome-msg {
+        text-align: left; /* Align welcome message to the left */
+        margin-top: 10px; /* Add space between college name and welcome message */
+    }
+}
+
 /* Event Title */
 .event-title {
     font-size: 3.5vw;
@@ -33,13 +62,7 @@ header {
     margin: 10px 0;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
-.clg-name {
-    font-family: 'Orbitron', sans-serif; /* Futuristic font */
-    font-size: 1.8em;
-    font-weight: bold;
-    color:aqua; /* Neon cyan color */
-    text-shadow: 0 0 8px rgba(0, 204, 255, 0.8), 0 0 16px rgba(0, 204, 255, 0.6); /* Glow effect */
-}
+
 
 /* Tagline */
 .tagline {
