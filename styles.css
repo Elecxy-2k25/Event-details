@@ -290,46 +290,68 @@ footer a:hover {
     background-image: url('assets/images/route_map.png');
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
-    .event-title {
-        font-size: 2.5em;
-    }
-
-    .clg-name {
-        font-size: 1.2em;
-    }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
-.countdown-timer {
+
+.countdown-container {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+}
+
+.countdown-box {
+    background: linear-gradient(145deg, #1a1a1a, #222);
+    border: 3px solid #ffcc00;
+    box-shadow: 0 0 15px #ffcc00;
+    padding: 20px;
+    width: 100px;
+    height: 120px;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.countdown-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #ff9900;
+}
+
+.countdown-number {
     font-size: 2.5rem;
     font-weight: bold;
     color: #ffcc00;
-    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900;
-    animation: pulse 1s infinite alternate, fadeIn 2s ease-in-out;
+    display: block;
+    animation: flip 1s ease-in-out;
 }
 
-@keyframes pulse {
-    from {
-        transform: scale(1);
-        text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900;
-    }
-    to {
-        transform: scale(1.1);
-        text-shadow: 0 0 15px #ffcc00, 0 0 25px #ff6600;
-    }
+.countdown-label {
+    font-size: 1rem;
+    color: #ddd;
 }
 
+/* Flip animation for number change */
+@keyframes flip {
+    0% { transform: rotateX(90deg); opacity: 0; }
+    100% { transform: rotateX(0deg); opacity: 1; }
+}
+
+/* Fade-in effect */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.countdown-container {
+    animation: fadeIn 1.5s ease-in-out;
 }
 
