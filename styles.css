@@ -290,3 +290,18 @@ footer a:hover {
     background-image: url('assets/images/route_map.png');
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .event-title {
+        font-size: 2.5em;
+    }
+
+    .clg-name {
+        font-size: 1.2em;
+    }
+}
