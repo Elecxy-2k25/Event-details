@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <header class="d-flex align-items-center justify-content-between p-3 bg-dark bg-opacity-75">
+    <header class="d-flex flex-column align-items-center p-3 bg-dark bg-opacity-75">
         <div class="d-flex align-items-center">
             <img src="assets/images/logo.jpg" alt="College Logo" class="logo">
             <div class="clg-name">Kamaraj College of Engineering and Technology</div>
@@ -26,7 +26,7 @@
             <img src="assets/images/rocket.png" alt="Rocket" class="rocket">
         </div>
 
-            <div class="about mt-5 p-4 rounded">
+        <div class="about mt-5 p-4 rounded">
             <h2 style="color:#66ccff;">About ELECXY-2K25</h2>
             <p style="color: #ffffff;">ELECXY-2K25 is a National level symposium conducted by the Department of Electronics and Communication Engineering (ECE). The event is themed around the vast Galaxy, symbolizing infinite possibilities in electronics and innovation.</p>
         </div>
@@ -55,35 +55,11 @@
                 </div>
             </div>
         </div>
-<div class="container text-center mt-4">
-    <h2 class="text-warning">Countdown to ELECXY-2K25</h2>
-    <div id="countdown" class="countdown-timer display-4 text-light"></div>
-</div>
 
-<script>
-    function updateCountdown() {
-        const eventDate = new Date("March 6, 2025 00:00:00").getTime();
-        const now = new Date().getTime();
-        const timeLeft = eventDate - now;
-
-        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-        document.getElementById("countdown").innerHTML = 
-            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-        if (timeLeft < 0) {
-            document.getElementById("countdown").innerHTML = "Event Started!";
-        }
-    }
-
-    setInterval(updateCountdown, 1000);
-</script>
-
-
-
+        <div class="container text-center mt-4">
+            <h2 class="text-warning">Countdown to ELECXY-2K25</h2>
+            <div id="countdown" class="countdown-timer display-4 text-light"></div>
+        </div>
 
         <div class="row mt-4 justify-content-center">
             <div class="col-md-5 col-10">
@@ -150,13 +126,13 @@
         </div>
     </div>
 
-<div class="container text-center mt-5">
-    <h2 class="text-warning">Roadmap to Our College</h2>
-    <a href="https://maps.app.goo.gl/eN7AG26EPivX8b9f9" target="_blank">
-        <img src="assets/images/route_map.png" alt="Roadmap to Our College" class="img-fluid rounded" style="max-width: 400px;">
-    </a>
-    <p style="font-size: 0.8em; color: #ffffff; margin-top: 10px;">Click here on the image</p>
-</div>
+    <div class="container text-center mt-5">
+        <h2 class="text-warning">Roadmap to Our College</h2>
+        <a href="https://maps.app.goo.gl/eN7AG26EPivX8b9f9" target="_blank">
+            <img src="assets/images/route_map.png" alt="Roadmap to Our College" class="img-fluid rounded" style="max-width: 400px;">
+        </a>
+        <p style="font-size: 0.8em; color: #ffffff; margin-top: 10px;">Click here on the image</p>
+    </div>
 
     <footer class="bg-dark text-light text-center p-4 mt-5">
         <p class="mb-2">Organized by the <strong>Department of Electronics and Communication Engineering</strong></p>
