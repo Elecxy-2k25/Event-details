@@ -22,18 +22,21 @@ function updateCountdown() {
     const now = new Date().getTime();
     const timeLeft = eventDate - now;
 
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
     const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-    document.getElementById("countdown").innerHTML = 
-        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    // Pad numbers with leading zeros
+    document.getElementById("hours").textContent = String(Math.floor(hours)).padStart(2, '0');
+    document.getElementById("minutes").textContent = String(Math.floor(minutes)).padStart(2, '0');
+    document.getElementById("seconds").textContent = String(Math.floor(seconds)).padStart(2, '0');
 
     if (timeLeft < 0) {
-        document.getElementById("countdown").innerHTML = "Event Started!";
-        document.getElementById("countdown").classList.remove("animate-countdown");
+        clearInterval(countdownInterval);
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
     }
 }
 
-setInterval(updateCountdown, 1000);
+const countdownInterval = setInterval(updateCountdown, 1000);
