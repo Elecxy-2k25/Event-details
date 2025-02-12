@@ -55,6 +55,34 @@
                 </div>
             </div>
         </div>
+<div class="container text-center mt-4">
+    <h2 class="text-warning">Countdown to ELECXY-2K25</h2>
+    <div id="countdown" class="countdown-timer display-4 text-light"></div>
+</div>
+
+<script>
+    function updateCountdown() {
+        const eventDate = new Date("March 6, 2025 00:00:00").getTime();
+        const now = new Date().getTime();
+        const timeLeft = eventDate - now;
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = 
+            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        if (timeLeft < 0) {
+            document.getElementById("countdown").innerHTML = "Event Started!";
+        }
+    }
+
+    setInterval(updateCountdown, 1000);
+</script>
+
+
 
 
         <div class="row mt-4 justify-content-center">
@@ -121,6 +149,7 @@
             </div>
         </div>
     </div>
+    <p class="mt-4 text-light"><strong><a href="roadmap.jpg" class="text-warning">Click here</a></strong> to view the roadmap to our college.</p>
 
     <footer class="bg-dark text-light text-center p-4 mt-5">
         <p class="mb-2">Organized by the <strong>Department of Electronics and Communication Engineering</strong></p>
@@ -166,5 +195,6 @@
             }
         });
     </script>
+    
 </body>
 </html>
