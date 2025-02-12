@@ -15,15 +15,12 @@ header {
     padding: 15px 5%;
     background: rgba(0, 0, 0, 0.8);
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-between; /* Ensures space between left and right content */
-    gap: 15px;
 }
 
-.logo {
-    width: 60px;
-    height: 60px;
-    background-image: url('assets/images/logo.jpg');
+.college-name-container {
+    flex: 1; /* Takes up remaining space */
 }
 
 .clg-name {
@@ -32,13 +29,17 @@ header {
     font-weight: bold;
     color: aqua;
     text-shadow: 0 0 8px rgba(0, 204, 255, 0.8), 0 0 16px rgba(0, 204, 255, 0.6);
+    text-align: left; /* Left-align the college name */
+    white-space: normal; /* Allow text to wrap */
+    line-height: 1.2; /* Adjust line height for better readability */
 }
 
 .welcome-msg {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.2em;
     color: #ffcc00;
-    font-weight: bold;
+    text-align: right; /* Right-align the welcome message */
+    white-space: nowrap; /* Prevent the welcome message from wrapping */
 }
 
 /* Mobile View */
@@ -46,12 +47,20 @@ header {
     header {
         flex-direction: column; /* Stack items vertically */
         align-items: flex-start; /* Align items to the left */
-        text-align: left;
+        text-align: left; /* Left-align text */
+    }
+
+    .clg-name {
+        font-size: 1.2em; /* Reduce font size for mobile */
+        line-height: 1.2; /* Adjust line height */
+        white-space: normal; /* Allow text to wrap */
+        margin-bottom: 10px; /* Add space between college name and welcome message */
     }
 
     .welcome-msg {
-        text-align: left; /* Align welcome message to the left */
-        margin-top: 10px; /* Add space between college name and welcome message */
+        font-size: 1em; /* Reduce font size for mobile */
+        text-align: left; /* Left-align the welcome message */
+        white-space: normal; /* Allow text to wrap */
     }
 }
 
