@@ -12,28 +12,28 @@
 
     <header class="d-flex align-items-center justify-content-between p-3 bg-dark bg-opacity-75">
         <div class="d-flex align-items-center">
-            <img src="assets/images/logo.jpg" alt="College Logo" class="logo">
-            <div class="clg-name">Kamaraj College of Engineering and Technology</div>
+            <img src="assets/images/logo.jpg" alt="College Logo" class="logo img-fluid" style="max-width: 100px;">
+            <div class="clg-name text-white ms-3">Kamaraj College of Engineering and Technology</div>
         </div>
     </header>
 
     <div class="container text-center mt-4">
-        <h1 class="event-title">ELECXY-2K25</h1>
-        <p class="tagline">Experience the galaxy of electronics</p>
+        <h1 class="event-title text-white">ELECXY-2K25</h1>
+        <p class="tagline text-white">Experience the galaxy of electronics</p>
 
         <div class="rocket-container">
-            <img src="assets/images/rocket.png" alt="Rocket" class="rocket">
+            <img src="assets/images/rocket.png" alt="Rocket" class="rocket img-fluid" style="max-width: 200px;">
         </div>
 
-            <div class="about mt-5 p-4 rounded">
+        <div class="about mt-5 p-4 rounded bg-dark bg-opacity-50">
             <h2 style="color:#66ccff;">About ELECXY-2K25</h2>
             <p style="color: #ffffff;">ELECXY-2K25 is a National level symposium conducted by the Department of Electronics and Communication Engineering (ECE). The event is themed around the vast Galaxy, symbolizing infinite possibilities in electronics and innovation.</p>
         </div>
 
         <div class="container mt-5">
-            <h2 class="text-center" style="color:#ffffff;">Highlights of Our College & Department</h2>
+            <h2 class="text-center text-white">Highlights of Our College & Department</h2>
             <div class="row mt-4">
-                <div class="col-md-6">
+                <div class="col-md-6 mb-4">
                     <img src="assets/images/college.jpg" alt="College Highlights" class="img-fluid rounded">
                     <p class="mt-3" style="color: #00ffff;"><strong style="color: #66ccff;">Our College:</strong></p>
                     <ul style="color:#ffffff;">
@@ -42,7 +42,7 @@
                         <li>Completed projects funded by government agencies like DST, DBT, and CSIR, totaling ₹3.6 Crore.</li>
                     </ul>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mb-4">
                     <img src="assets/images/dept.jpg" alt="ECE Department" class="img-fluid rounded">
                     <p class="mt-3" style="color: #00ffff;"><strong style="color:#66ccff;">Department of ECE:</strong></p>
                     <ul style="color:#ffffff;">
@@ -54,41 +54,39 @@
                 </div>
             </div>
         </div>
-<div class="container text-center mt-4">
-    <h2 class="text-warning">Countdown to ELECXY-2K25</h2>
-    <div id="countdown" class="countdown-timer display-4 text-light"></div>
-</div>
 
-<script>
-    function updateCountdown() {
-        const eventDate = new Date("March 6, 2025 00:00:00").getTime();
-        const now = new Date().getTime();
-        const timeLeft = eventDate - now;
+        <div class="container text-center mt-4">
+            <h2 class="text-warning">Countdown to ELECXY-2K25</h2>
+            <div id="countdown" class="countdown-timer display-4 text-light"></div>
+        </div>
 
-        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        <script>
+            function updateCountdown() {
+                const eventDate = new Date("March 6, 2025 00:00:00").getTime();
+                const now = new Date().getTime();
+                const timeLeft = eventDate - now;
 
-        document.getElementById("countdown").innerHTML = 
-            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-        if (timeLeft < 0) {
-            document.getElementById("countdown").innerHTML = "Event Started!";
-        }
-    }
+                document.getElementById("countdown").innerHTML = 
+                    days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
-    setInterval(updateCountdown, 1000);
-</script>
+                if (timeLeft < 0) {
+                    document.getElementById("countdown").innerHTML = "Event Started!";
+                }
+            }
 
-
-
+            setInterval(updateCountdown, 1000);
+        </script>
 
         <div class="row mt-4 justify-content-center">
-            <div class="col-md-5 col-10">
-                <div class="event-card" onclick="window.location.href='tech page.html'">
-                    <h3>Technical Events</h3>
-                    <ul class="event-list">
+            <div class="col-md-5 col-10 mb-4">
+                <div class="event-card p-3 bg-dark bg-opacity-50 rounded" onclick="window.location.href='tech page.html'">
+                    <h3 class="text-white">Technical Events</h3>
+                    <ul class="event-list text-white">
                         <li>Paper Way Galaxy</li>
                         <li>Star Tech Expo</li>
                         <li>Signal Sync</li>
@@ -96,10 +94,10 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-5 col-10">
-                <div class="event-card" onclick="window.location.href='nontech.html'">
-                    <h3>Non-Technical Events</h3>
-                    <ul class="event-list">
+            <div class="col-md-5 col-10 mb-4">
+                <div class="event-card p-3 bg-dark bg-opacity-50 rounded" onclick="window.location.href='nontech.html'">
+                    <h3 class="text-white">Non-Technical Events</h3>
+                    <ul class="event-list text-white">
                         <li>Stellar Frames</li>
                         <li>Zero Gravity Games</li>
                         <li>Galactic Detective</li>
@@ -109,39 +107,39 @@
             </div>
         </div>
 
-        <a href="#" class="register-button">Register Now</a>
+        <a href="#" class="register-button btn btn-warning btn-lg mt-4">Register Now</a>
     </div>
 
     <div class="container mt-5">
-        <h2 class="text-center">Meet Our Chief Guests</h2>
+        <h2 class="text-center text-white">Meet Our Chief Guests</h2>
         <div class="row justify-content-center">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="assets/images/chiefguest1.jpeg" alt="Chief Guest 1">
-                            <h4>Chief Guest 1</h4>
+                            <img src="assets/images/chiefguest1.jpeg" alt="Chief Guest 1" class="img-fluid rounded">
+                            <h4 class="text-white mt-2">Chief Guest 1</h4>
                         </div>
-                        <div class="flip-card-back">
-                            <h4>Chief Guest 1</h4>
-                            <p>Director, ISRO Satellite Center</p>
-                            <p>Leading advancements in space technology and satellite research.</p>
+                        <div class="flip-card-back p-3">
+                            <h4 class="text-white">Chief Guest 1</h4>
+                            <p class="text-white">Director, ISRO Satellite Center</p>
+                            <p class="text-white">Leading advancements in space technology and satellite research.</p>
                         </div>
                     </div>
                 </div>
             </div>
-    
-            <div class="col-md-4">
+
+            <div class="col-md-4 mb-4">
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="assets/images/chiefguest2.jpeg" alt="Chief Guest 2">
-                            <h4>Chief Guest 2</h4>
+                            <img src="assets/images/chiefguest2.jpeg" alt="Chief Guest 2" class="img-fluid rounded">
+                            <h4 class="text-white mt-2">Chief Guest 2</h4>
                         </div>
-                        <div class="flip-card-back">
-                            <h4>Chief Guest 2</h4>
-                            <p>CTO, Tesla India</p>
-                            <p>Pioneering AI and electric vehicle innovations in India.</p>
+                        <div class="flip-card-back p-3">
+                            <h4 class="text-white">Chief Guest 2</h4>
+                            <p class="text-white">CTO, Tesla India</p>
+                            <p class="text-white">Pioneering AI and electric vehicle innovations in India.</p>
                         </div>
                     </div>
                 </div>
@@ -149,13 +147,13 @@
         </div>
     </div>
 
-<div class="container text-center mt-5">
-    <h2 class="text-warning">Roadmap to Our College</h2>
-    <a href="https://maps.app.goo.gl/eN7AG26EPivX8b9f9" target="_blank">
-        <img src="assets/images/route_map.png" alt="Roadmap to Our College" class="img-fluid rounded" style="max-width: 400px;">
-    </a>
-    <p style="font-size: 0.8em; color: #ffffff; margin-top: 10px;">Click here on the image</p>
-</div>
+    <div class="container text-center mt-5">
+        <h2 class="text-warning">Roadmap to Our College</h2>
+        <a href="https://maps.app.goo.gl/eN7AG26EPivX8b9f9" target="_blank">
+            <img src="assets/images/route_map.png" alt="Roadmap to Our College" class="img-fluid rounded" style="max-width: 400px;">
+        </a>
+        <p style="font-size: 0.8em; color: #ffffff; margin-top: 10px;">Click here on the image</p>
+    </div>
 
     <footer class="bg-dark text-light text-center p-4 mt-5">
         <p class="mb-2">Organized by the <strong>Department of Electronics and Communication Engineering</strong></p>
@@ -191,7 +189,7 @@
                     rocket.style.display = "none";
                 }
             }, 4000);
-        
+
             const welcomeMsg = document.getElementById("welcome-msg");
             if (welcomeMsg) {
                 welcomeMsg.style.fontFamily = "Orbitron, sans-serif";
@@ -201,6 +199,6 @@
             }
         });
     </script>
-    
+
 </body>
 </html>
