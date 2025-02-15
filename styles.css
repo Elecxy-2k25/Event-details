@@ -336,3 +336,52 @@ footer a:hover {
 .animate-countdown {
     animation: pulse 1.5s infinite;
 }
+
+    .countdown-timer {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .countdown-box {
+        background-color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        min-width: 100px;
+    }
+
+    .countdown-box span {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #ffcc00;
+    }
+
+    .countdown-label {
+        font-size: 1rem;
+        color: #ffffff;
+        margin-top: 10px;
+    }
+
+    .event-started {
+        font-size: 2rem;
+        color: #ffcc00;
+        font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+        .countdown-box {
+            min-width: 80px;
+            padding: 15px;
+        }
+
+        .countdown-box span {
+            font-size: 2rem;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+        }
+    }
+
