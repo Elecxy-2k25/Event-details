@@ -62,7 +62,8 @@
     </div>
 </div>
 
-<div class="container text-center mt-4">
+
+ <div class="container text-center mt-4">
     <h2 class="text-warning">Countdown to ELECXY-2K25</h2>
     <div id="countdown" class="countdown-timer">
         <!-- Days Box -->
@@ -108,7 +109,25 @@
 
         // If the event has started
         if (timeLeft < 0) {
-            document.getElementById("countdown").innerHTML = "<div class='event-started'>Event Started!</div>";
+            document.getElementById("countdown").innerHTML = `
+                <div class="countdown-box">
+                    <span>00</span>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-box">
+                    <span>00</span>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-box">
+                    <span>00</span>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-box">
+                    <span>00</span>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+                <div class="event-started">Event Started!</div>
+            `;
         }
     }
 
@@ -151,6 +170,7 @@
         font-size: 2rem;
         color: #ffcc00;
         font-weight: bold;
+        margin-top: 20px;
     }
 
     @media (max-width: 768px) {
