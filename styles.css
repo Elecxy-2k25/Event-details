@@ -58,6 +58,18 @@ header {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
+.image-container {
+    width: 100%; /* Ensure the container takes full width */
+    aspect-ratio: 3 / 2; /* Adjust the aspect ratio as needed (e.g., 3:2) */
+    overflow: hidden; /* Hide overflow if the image is larger */
+    border-radius: 20px; /* Apply border-radius to the container */
+}
+
+.image-container img {
+    width: 100%; /* Ensure the image takes full width of the container */
+    height: 100%; /* Ensure the image takes full height of the container */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+}
 
 /* Event List */
 .event-list {
