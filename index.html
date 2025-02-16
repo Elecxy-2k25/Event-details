@@ -22,6 +22,58 @@
                 display: block;
             }
         }
+
+        /* New Registration Box Styles */
+        .registration-box {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .registration-box h3 {
+            color: #ffcc00;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 15px;
+        }
+
+        .registration-box p {
+            color: #ffffff;
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .register-button-enhanced {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #ff6f61, #ff3b2f);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 15px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .register-button-enhanced:hover {
+            background: linear-gradient(90deg, #ff3b2f, #ff6f61);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
     </style>
 </head>
 <body>
@@ -69,128 +121,19 @@
             </div>
         </div>
 
-        <script>
-            function updateCountdown() {
-                const eventDate = new Date("March 6, 2025 00:00:00").getTime();
-                const now = new Date().getTime();
-                const timeLeft = eventDate - now;
-
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-                document.getElementById("days").textContent = String(days).padStart(2, "0");
-                document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-                document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-                document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
-
-                if (timeLeft < 0) {
-                    document.getElementById("countdown").innerHTML = `
-                        <div class="countdown-box">
-                            <span>00</span>
-                            <div class="countdown-label">Days</div>
-                        </div>
-                        <div class="countdown-box">
-                            <span>00</span>
-                            <div class="countdown-label">Hours</div>
-                        </div>
-                        <div class="countdown-box">
-                            <span>00</span>
-                            <div class="countdown-label">Minutes</div>
-                        </div>
-                        <div class="countdown-box">
-                            <span>00</span>
-                            <div class="countdown-label">Seconds</div>
-                        </div>
-                        <div class="event-started">Event Started!</div>
-                    `;
-                }
-            }
-
-            setInterval(updateCountdown, 1000);
-            updateCountdown();
-        </script>
-
-        <style>
-            .countdown-timer {
-                display: flex;
-                justify-content: center;
-                gap: 15px;
-                margin-top: 20px;
-            }
-
-            .countdown-box {
-                background-color: #333;
-                padding: 20px;
-                border-radius: 10px;
-                text-align: center;
-                min-width: 100px;
-            }
-
-            .countdown-box span {
-                font-size: 2.5rem;
-                font-weight: bold;
-                color: #ffcc00;
-            }
-
-            .countdown-label {
-                font-size: 1rem;
-                color: #ffffff;
-                margin-top: 10px;
-            }
-
-            .event-started {
-                font-size: 2rem;
-                color: #ffcc00;
-                font-weight: bold;
-                margin-top: 20px;
-            }
-
-            @media (max-width: 768px) {
-                .countdown-box {
-                    min-width: 80px;
-                    padding: 15px;
-                }
-
-                .countdown-box span {
-                    font-size: 2rem;
-                }
-
-                .countdown-label {
-                    font-size: 0.9rem;
-                }
-            }
-        </style>
-
-        <div class="row mt-4 justify-content-center">
-            <div class="col-md-5 col-10 mb-4">
-                <div class="event-card p-3 bg-dark bg-opacity-50 rounded" onclick="window.location.href='tech page.html'">
-                    <h3 class="text-white">Technical Events</h3>
-                    <ul class="event-list text-white">
-                        <li>Paper Way Galaxy</li>
-                        <li>Star Tech Expo</li>
-                        <li>Signal Sync</li>
-                        <li>GalaxIQ</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-5 col-10 mb-4">
-                <div class="event-card p-3 bg-dark bg-opacity-50 rounded" onclick="window.location.href='nontech.html'">
-                    <h3 class="text-white">Non-Technical Events</h3>
-                    <ul class="event-list text-white">
-                        <li>Stellar Frames</li>
-                        <li>Zero Gravity Games</li>
-                        <li>Galactic Detective</li>
-                        <li>Nebula Recall</li>
-                    </ul>
-                </div>
-            </div>
+        <!-- New Registration Box -->
+        <div class="registration-box">
+            <h3>Registration Details</h3>
+            <p>Participation Fee: ₹250 per member</p>
+            <p>Includes: Lunch, Refreshment, Registration Kit</p>
+            <p>Cash Prize for Winners</p>
+            <a href="#" class="register-button-enhanced">Register Now</a>
         </div>
 
         <a href="#" class="register-button btn btn-warning btn-lg mt-4">Register Now</a>
     </div>
 
+    <!-- Rest of the code remains unchanged -->
     <!-- Moved Highlights Section -->
     <div class="container mt-5">
         <h2 class="text-center text-white">Highlights of Our College & Department</h2>
