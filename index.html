@@ -22,6 +22,52 @@
                 display: block;
             }
         }
+
+        .registration-box {
+            max-width: 400px;
+            margin: auto;
+            border: 2px solid #ffcc00;
+            box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+            padding: 20px;
+            position: relative;
+        }
+
+        .register-button {
+            display: block;
+            width: 100%;
+            margin: 20px auto;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 25px;
+            transition: 0.3s;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+            background-color: #ffcc00;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .register-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 204, 0, 1);
+            background-color: #ff6600;
+            color: #fff;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 <body>
@@ -187,48 +233,21 @@
                 </div>
             </div>
         </div>
-<!-- Registration Box -->
-<div class="registration-box bg-dark text-white p-4 rounded mt-5">
-    <h2 class="text-warning text-center">Registration Details</h2>
-    <p class="text-center">Participation Fee: <strong>₹250 per member</strong></p>
-    <p class="text-center">Includes:</p>
-    <ul class="text-center list-unstyled">
-        <li>✅ Lunch</li>
-        <li>✅ Refreshments</li>
-        <li>✅ Registration Kit</li>
-        <li>✅ Cash Prize for Winners</li>
-    </ul>
-</div>
 
-<!-- Styled Register Button -->
-<a href="#" class="register-button btn btn-warning btn-lg mt-4 animated-button">Register Now</a>
+        <!-- Registration Box -->
+        <div class="registration-box bg-dark text-white p-4 rounded mt-5">
+            <h2 class="text-warning text-center">Registration Details</h2>
+            <p class="text-center">Participation Fee: <strong>₹250 per member</strong></p>
+            <p class="text-center">Includes:</p>
+            <ul class="text-center list-unstyled">
+                <li>✅ Lunch</li>
+                <li>✅ Refreshments</li>
+                <li>✅ Registration Kit</li>
+                <li>✅ Cash Prize for Winners</li>
+            </ul>
+            <a href="#" class="register-button btn btn-lg">Register Now</a>
+        </div>
 
-<style>
-    .registration-box {
-        max-width: 400px;
-        margin: auto;
-        border: 2px solid #ffcc00;
-        box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
-    }
-
-    .animated-button {
-        display: block;
-        width: 250px;
-        margin: 20px auto;
-        font-weight: bold;
-        text-transform: uppercase;
-        border-radius: 25px;
-        transition: 0.3s;
-        box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
-    }
-
-    .animated-button:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 20px rgba(255, 204, 0, 1);
-    }
-</style>
-
-        <a href="#" class="register-button btn btn-warning btn-lg mt-4">Register Now</a>
     </div>
 
     <!-- Moved Highlights Section -->
