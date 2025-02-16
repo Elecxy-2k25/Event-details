@@ -1,4 +1,3 @@
-/* styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Michroma&display=swap');
 
 body {
@@ -34,22 +33,9 @@ header {
     font-family: 'Orbitron', sans-serif;
     margin: 10px 0;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-}
-
-.elecxy-text {
-    background: linear-gradient(90deg, #ff007f, #ffcc00, #00ffcc, #007fff);
+    background: linear-gradient(90deg, #ff6f61, #ffcc00, #66ccff, #00ffcc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: rainbow 5s linear infinite;
-}
-
-.year-text {
-    color: #ffcc00;
-}
-
-@keyframes rainbow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
 }
 
 .clg-name {
@@ -114,7 +100,7 @@ header {
     color: #ff6f61;
 }
 
-/* Event Cards - Responsive Grid */
+/* Event Cards */
 .event-card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -204,6 +190,72 @@ footer a:hover {
         left: 100vw;
         bottom: 100vh;
         transform: rotate(0deg);
+    }
+}
+
+/* Countdown Timer */
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.countdown-box {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.countdown-box span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.countdown-label {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.event-started {
+    font-size: 2rem;
+    color: #ffcc00;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .countdown-box {
+        min-width: 80px;
+        padding: 15px;
+    }
+
+    .countdown-box span {
+        font-size: 2rem;
+    }
+
+    .countdown-label {
+        font-size: 0.9rem;
+    }
+}
+
+/* Welcome Message */
+.welcome-message {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5em;
+    color: #ffcc00;
+    font-weight: bold;
+    margin-left: auto;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .welcome-message {
+        display: block;
     }
 }
 
@@ -356,4 +408,73 @@ footer a:hover {
 
 .animate-countdown {
     animation: pulse 1.5s infinite;
+}
+.colorful-text {
+    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.rocket-container img {
+    max-width: 200px;
+}
+
+.about {
+    text-align: center;
+}
+
+.image-container img {
+    border-radius: 20px;
+    width: 100%;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.countdown-box {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.countdown-box span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.countdown-label {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.event-card {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+}
+
+.register-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+}
+
+footer a {
+    color: #ffcc00;
 }
