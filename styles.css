@@ -29,21 +29,18 @@ header {
 /* Event Title */
 .event-title {
     background: rgba(0, 0, 0, 1);
+    color:aqua;
     font-size: 3.5vw;
     font-family: 'Orbitron', sans-serif;
     margin: 10px 0;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    background: linear-gradient(90deg, #ff6f61, #ffcc00, #66ccff, #00ffcc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
-
 .clg-name {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
     font-size: 1.8em;
     font-weight: bold;
-    color: aqua;
-    text-shadow: 0 0 8px rgba(0, 204, 255, 0.8), 0 0 16px rgba(0, 204, 255, 0.6);
+    color:aqua; /* Neon cyan color */
+    text-shadow: 0 0 8px rgba(0, 204, 255, 0.8), 0 0 16px rgba(0, 204, 255, 0.6); /* Glow effect */
 }
 
 /* Tagline */
@@ -63,18 +60,17 @@ header {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
-
 .image-container {
-    width: 100%;
-    aspect-ratio: 3 / 2;
-    overflow: hidden;
-    border-radius: 20px;
+    width: 100%; /* Ensure the container takes full width */
+    aspect-ratio: 3 / 2; /* Adjust the aspect ratio as needed (e.g., 3:2) */
+    overflow: hidden; /* Hide overflow if the image is larger */
+    border-radius: 20px; /* Apply border-radius to the container */
 }
 
 .image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* Ensure the image takes full width of the container */
+    height: 100%; /* Ensure the image takes full height of the container */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
 }
 
 /* Event List */
@@ -100,7 +96,7 @@ header {
     color: #ff6f61;
 }
 
-/* Event Cards */
+/* Event Cards - Responsive Grid */
 .event-card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -190,72 +186,6 @@ footer a:hover {
         left: 100vw;
         bottom: 100vh;
         transform: rotate(0deg);
-    }
-}
-
-/* Countdown Timer */
-.countdown-timer {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.countdown-box {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    min-width: 100px;
-}
-
-.countdown-box span {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ffcc00;
-}
-
-.countdown-label {
-    font-size: 1rem;
-    color: #ffffff;
-    margin-top: 10px;
-}
-
-.event-started {
-    font-size: 2rem;
-    color: #ffcc00;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-@media (max-width: 768px) {
-    .countdown-box {
-        min-width: 80px;
-        padding: 15px;
-    }
-
-    .countdown-box span {
-        font-size: 2rem;
-    }
-
-    .countdown-label {
-        font-size: 0.9rem;
-    }
-}
-
-/* Welcome Message */
-.welcome-message {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5em;
-    color: #ffcc00;
-    font-weight: bold;
-    margin-left: auto;
-    display: none;
-}
-
-@media (min-width: 768px) {
-    .welcome-message {
-        display: block;
     }
 }
 
@@ -389,7 +319,6 @@ footer a:hover {
         font-size: 1.2em;
     }
 }
-
 /* Countdown Animation */
 @keyframes pulse {
     0% {
@@ -408,73 +337,4 @@ footer a:hover {
 
 .animate-countdown {
     animation: pulse 1.5s infinite;
-}
-.colorful-text {
-    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-}
-
-.rocket-container img {
-    max-width: 200px;
-}
-
-.about {
-    text-align: center;
-}
-
-.image-container img {
-    border-radius: 20px;
-    width: 100%;
-}
-
-.countdown-timer {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.countdown-box {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    min-width: 100px;
-}
-
-.countdown-box span {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ffcc00;
-}
-
-.countdown-label {
-    font-size: 1rem;
-    color: #ffffff;
-    margin-top: 10px;
-}
-
-.event-card {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
-
-.event-card:hover {
-    transform: scale(1.05);
-}
-
-.register-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-}
-
-footer a {
-    color: #ffcc00;
-}
+} 
