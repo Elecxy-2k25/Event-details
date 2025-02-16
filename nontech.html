@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Michroma&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Add this CSS for the "Welcome!!" message */
         .welcome-message {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.5em;
@@ -23,11 +24,12 @@
                 display: block;
             }
         }
+
         .event-detail-card {
-            background: #ffffff;
-            color: #000000;
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
             transition: transform 0.3s;
         }
 
@@ -45,8 +47,16 @@
         }
 
         .event-detail-card .card-title {
-            color: #007bff;
+            color: #66ccff;
             font-family: 'Orbitron', sans-serif;
+        }
+
+        .event-detail-card .card-text {
+            color: #ffffff;
+        }
+
+        .event-detail-card strong {
+            color: #ffcc00;
         }
     </style>
 </head>
