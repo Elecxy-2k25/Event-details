@@ -7,13 +7,33 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Michroma&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add this CSS for the "Welcome!!" message */
+        .welcome-message {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5em;
+            color: #ffcc00;
+            font-weight: bold;
+            margin-left: auto; /* Pushes the message to the right */
+            display: none; /* Hidden by default for mobile */
+        }
+
+        /* Show the message on desktop */
+        @media (min-width: 768px) {
+            .welcome-message {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <header class="d-flex align-items-center justify-content-between p-3 bg-dark bg-opacity-75">
         <div class="d-flex">
             <img src="assets/images/logo.jpg" alt="College Logo" class="logo img-fluid" style="max-width: 100px;border-radius:50px">
             <div class="clg-name text-white ms-3">Kamaraj College of Engineering and Technology</div>
         </div>
+        <!-- Add the "Welcome!!" message here -->
         <div class="welcome-message">Welcome to the Galaxy of Innovations!!</div>
     </header>
 
@@ -33,6 +53,7 @@
         <div class="container mt-5">
             <h2 class="text-center text-white">Highlights of Our College & Department</h2>
             <div class="row mt-4">
+                <!-- College Highlights -->
                 <div class="col-md-6 mb-4">
                     <div class="image-container">
                         <img src="assets/images/college.jpg" alt="College Highlights" class="img-fluid rounded" style="border-radius: 20px;">
@@ -45,6 +66,7 @@
                     </ul>
                 </div>
 
+                <!-- Department Highlights -->
                 <div class="col-md-6 mb-4">
                     <div class="image-container">
                         <img src="assets/images/dept.jpg" alt="ECE Department" class="img-fluid rounded" style="border-radius: 20px;">
@@ -63,18 +85,22 @@
         <div class="container text-center mt-4">
             <h2 class="text-warning">Countdown to ELECXY-2K25</h2>
             <div id="countdown" class="countdown-timer">
+                <!-- Days Box -->
                 <div class="countdown-box">
                     <span id="days">00</span>
                     <div class="countdown-label">Days</div>
                 </div>
+                <!-- Hours Box -->
                 <div class="countdown-box">
                     <span id="hours">00</span>
                     <div class="countdown-label">Hours</div>
                 </div>
+                <!-- Minutes Box -->
                 <div class="countdown-box">
                     <span id="minutes">00</span>
                     <div class="countdown-label">Minutes</div>
                 </div>
+                <!-- Seconds Box -->
                 <div class="countdown-box">
                     <span id="seconds">00</span>
                     <div class="countdown-label">Seconds</div>
@@ -84,20 +110,23 @@
 
         <script>
             function updateCountdown() {
-                const eventDate = new Date("March 6, 2025 00:00:00").getTime();
+                const eventDate = new Date("March 6, 2025 00:00:00").getTime(); // Set your event date here
                 const now = new Date().getTime();
                 const timeLeft = eventDate - now;
 
+                // Calculate days, hours, minutes, and seconds
                 const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000;
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
+                // Update the countdown boxes
                 document.getElementById("days").textContent = String(days).padStart(2, "0");
                 document.getElementById("hours").textContent = String(hours).padStart(2, "0");
                 document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
                 document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
 
+                // If the event has started
                 if (timeLeft < 0) {
                     document.getElementById("countdown").innerHTML = `
                         <div class="countdown-box">
@@ -121,9 +150,63 @@
                 }
             }
 
+            // Update the countdown every second
             setInterval(updateCountdown, 1000);
+
+            // Initialize the countdown immediately
             updateCountdown();
         </script>
+
+        <style>
+            .countdown-timer {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            .countdown-box {
+                background-color: #333;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                min-width: 100px;
+            }
+
+            .countdown-box span {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: #ffcc00;
+            }
+
+            .countdown-label {
+                font-size: 1rem;
+                color: #ffffff;
+                margin-top: 10px;
+            }
+
+            .event-started {
+                font-size: 2rem;
+                color: #ffcc00;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+
+            @media (max-width: 768px) {
+                .countdown-box {
+                    min-width: 80px;
+                    padding: 15px;
+                }
+
+                .countdown-box span {
+                    font-size: 2rem;
+                }
+
+                .countdown-label {
+                    font-size: 0.9rem;
+                }
+            }
+        </style>
 
         <div class="row mt-4 justify-content-center">
             <div class="col-md-5 col-10 mb-4">
@@ -152,6 +235,8 @@
 
         <a href="#" class="register-button btn btn-warning btn-lg mt-4">Register Now</a>
     </div>
+
+
 
     <div class="container text-center mt-5">
         <h2 class="text-warning">Roadmap to Our College</h2>
@@ -198,4 +283,4 @@
         });
     </script>
 </body>
-</html>
+</html> 
