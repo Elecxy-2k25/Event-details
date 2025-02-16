@@ -22,68 +22,6 @@
                 display: block;
             }
         }
-
-        /* New CSS for Registration Box */
-        .registration-box {
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 2px solid #ffcc00;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 600px;
-            text-align: center;
-            color: #ffffff;
-        }
-
-        .registration-box h3 {
-            color: #ffcc00;
-            margin-bottom: 20px;
-        }
-
-        .registration-box ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .registration-box ul li {
-            margin: 10px 0;
-            font-size: 1.1em;
-        }
-
-        .register-button {
-            background-color: #ffcc00;
-            color: #000;
-            font-size: 1.2em;
-            padding: 10px 30px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .register-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transition: all 0.5s ease;
-            transform: translate(-50%, -50%) scale(0);
-        }
-
-        .register-button:hover::before {
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .register-button:hover {
-            background-color: #ffdd33;
-            box-shadow: 0 0 15px #ffcc00;
-        }
     </style>
 </head>
 <body>
@@ -131,16 +69,99 @@
             </div>
         </div>
 
-        <!-- Registration Box -->
-        <div class="registration-box">
-            <h3>Registration Details</h3>
-            <ul>
-                <li>Participation Fee: ₹250 per member</li>
-                <li>Includes: Lunch, Refreshment, Registration Kit</li>
-                <li>Cash Prizes for Winners</li>
-            </ul>
-            <button class="register-button">Register Now</button>
-        </div>
+        <script>
+            function updateCountdown() {
+                const eventDate = new Date("March 6, 2025 00:00:00").getTime();
+                const now = new Date().getTime();
+                const timeLeft = eventDate - now;
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById("days").textContent = String(days).padStart(2, "0");
+                document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+                document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+                document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+
+                if (timeLeft < 0) {
+                    document.getElementById("countdown").innerHTML = `
+                        <div class="countdown-box">
+                            <span>00</span>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-box">
+                            <span>00</span>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-box">
+                            <span>00</span>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-box">
+                            <span>00</span>
+                            <div class="countdown-label">Seconds</div>
+                        </div>
+                        <div class="event-started">Event Started!</div>
+                    `;
+                }
+            }
+
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        </script>
+
+        <style>
+            .countdown-timer {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            .countdown-box {
+                background-color: #333;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                min-width: 100px;
+            }
+
+            .countdown-box span {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: #ffcc00;
+            }
+
+            .countdown-label {
+                font-size: 1rem;
+                color: #ffffff;
+                margin-top: 10px;
+            }
+
+            .event-started {
+                font-size: 2rem;
+                color: #ffcc00;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+
+            @media (max-width: 768px) {
+                .countdown-box {
+                    min-width: 80px;
+                    padding: 15px;
+                }
+
+                .countdown-box span {
+                    font-size: 2rem;
+                }
+
+                .countdown-label {
+                    font-size: 0.9rem;
+                }
+            }
+        </style>
 
         <div class="row mt-4 justify-content-center">
             <div class="col-md-5 col-10 mb-4">
@@ -166,6 +187,48 @@
                 </div>
             </div>
         </div>
+<!-- Registration Box -->
+<div class="registration-box bg-dark text-white p-4 rounded mt-5">
+    <h2 class="text-warning text-center">Registration Details</h2>
+    <p class="text-center">Participation Fee: <strong>₹250 per member</strong></p>
+    <p class="text-center">Includes:</p>
+    <ul class="text-center list-unstyled">
+        <li>✅ Lunch</li>
+        <li>✅ Refreshments</li>
+        <li>✅ Registration Kit</li>
+        <li>✅ Cash Prize for Winners</li>
+    </ul>
+</div>
+
+<!-- Styled Register Button -->
+<a href="#" class="register-button btn btn-warning btn-lg mt-4 animated-button">Register Now</a>
+
+<style>
+    .registration-box {
+        max-width: 400px;
+        margin: auto;
+        border: 2px solid #ffcc00;
+        box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+    }
+
+    .animated-button {
+        display: block;
+        width: 250px;
+        margin: 20px auto;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 25px;
+        transition: 0.3s;
+        box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+    }
+
+    .animated-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(255, 204, 0, 1);
+    }
+</style>
+
+        <a href="#" class="register-button btn btn-warning btn-lg mt-4">Register Now</a>
     </div>
 
     <!-- Moved Highlights Section -->
