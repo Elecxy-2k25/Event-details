@@ -8,17 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Michroma&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Add this CSS for the "Welcome!!" message */
         .welcome-message {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.5em;
             color: #ffcc00;
             font-weight: bold;
-            margin-left: auto; /* Pushes the message to the right */
-            display: none; /* Hidden by default for mobile */
+            margin-left: auto;
+            display: none;
         }
 
-        /* Show the message on desktop */
         @media (min-width: 768px) {
             .welcome-message {
                 display: block;
@@ -33,7 +31,6 @@
             <img src="assets/images/logo.jpg" alt="College Logo" class="logo img-fluid" style="max-width: 100px;border-radius:50px">
             <div class="clg-name text-white ms-3">Kamaraj College of Engineering and Technology</div>
         </div>
-        <!-- Add the "Welcome!!" message here -->
         <div class="welcome-message">Welcome to the Galaxy of Innovations!!</div>
     </header>
 
@@ -50,52 +47,21 @@
             <p style="color: #ffffff;">ELECXY-2K25 is a National level symposium conducted by the Department of Electronics and Communication Engineering (ECE). The event is themed around the vast Galaxy, symbolizing infinite possibilities in electronics and innovation.</p>
         </div>
 
-<div class="container mt-5">
-    <h2 class="text-center text-white">Highlights of Our College & Department</h2>
-    <div class="row mt-4">
-        <!-- College Highlights -->
-        <div class="col-md-6 mb-4">
-            <div class="image-container">
-                <img src="assets/images/college.jpg" alt="College Highlights" class="img-fluid rounded" style="border-radius: 20px;">
-            </div>
-            <p class="mt-3" style="color: #00ffff;"><strong style="color: #66ccff;">Our College</strong></p>
-            <p style="color:#ffffff; text-align: justify;">
-                Kamaraj College of Engineering and Technology is established in 1998 – 1999. Our College becomes Autonomous from 2020. It is rightly named after the son of soil, Bharat Ratna Sri. K. Kamaraj who was the undisputed leader of the suppressed downtrodden and a champion of free education for Masses. Our College is approved by AICTE, New Delhi & Accredited by NBA, NAAC with “A” Grade and affiliated to Anna University Chennai. It is promoted and supported by Virudhunagar Hindu Nadar’s Mahamai Tharappus in Virudhunagar. The College attracts outstanding students from different parts of India by virtue of its discipline and infrastructure facilities. Our College is a 25 years old engineering college with currently 9 UG Programme and 2 PG Programme and with 8 Research Center departments. Out of 9 departments 7 departments (CSE, ECE, IT, MTR, EEE, Mechanical, Biotechnology) are NBA Accredited departments.
-            </p>
-        </div>
-
-        <!-- Department Highlights -->
-        <div class="col-md-6 mb-4">
-            <div class="image-container">
-                <img src="assets/images/dept.jpg" alt="ECE Department" class="img-fluid rounded" style="border-radius: 20px;">
-            </div>
-            <p class="mt-3" style="color: #00ffff;"><strong style="color:#66ccff;">Department of ECE</strong></p>
-            <p style="color:#ffffff; text-align: justify;">
-                The Department of Electronics and Communication Engineering is established in the year 1998. In 2011, the department started post graduate program, M.E. degree in Communication and Networking. The Department has received reaccreditation from the NBA for the period 2023 to 2026. It is recognized as Research Center by Anna University Chennai.Also It has a Cenre of Excellence Tessolve lab for industry based learning. The Department has 13 highly qualified and well experienced faculty members. It is well equipped with fully air conditional laboratories to cater the present academic and industry requirements. The department is conducting various value added and Seminars to update students and faculty members with the knowledge of emerging fields towards industrial applications.
-            </p>
-        </div>
-    </div>
-</div>
-
         <div class="container text-center mt-4">
             <h2 class="text-warning">Countdown to ELECXY-2K25</h2>
             <div id="countdown" class="countdown-timer">
-                <!-- Days Box -->
                 <div class="countdown-box">
                     <span id="days">00</span>
                     <div class="countdown-label">Days</div>
                 </div>
-                <!-- Hours Box -->
                 <div class="countdown-box">
                     <span id="hours">00</span>
                     <div class="countdown-label">Hours</div>
                 </div>
-                <!-- Minutes Box -->
                 <div class="countdown-box">
                     <span id="minutes">00</span>
                     <div class="countdown-label">Minutes</div>
                 </div>
-                <!-- Seconds Box -->
                 <div class="countdown-box">
                     <span id="seconds">00</span>
                     <div class="countdown-label">Seconds</div>
@@ -105,23 +71,20 @@
 
         <script>
             function updateCountdown() {
-                const eventDate = new Date("March 6, 2025 00:00:00").getTime(); // Set your event date here
+                const eventDate = new Date("March 6, 2025 00:00:00").getTime();
                 const now = new Date().getTime();
                 const timeLeft = eventDate - now;
 
-                // Calculate days, hours, minutes, and seconds
                 const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-                // Update the countdown boxes
                 document.getElementById("days").textContent = String(days).padStart(2, "0");
                 document.getElementById("hours").textContent = String(hours).padStart(2, "0");
                 document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
                 document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
 
-                // If the event has started
                 if (timeLeft < 0) {
                     document.getElementById("countdown").innerHTML = `
                         <div class="countdown-box">
@@ -145,10 +108,7 @@
                 }
             }
 
-            // Update the countdown every second
             setInterval(updateCountdown, 1000);
-
-            // Initialize the countdown immediately
             updateCountdown();
         </script>
 
@@ -231,7 +191,31 @@
         <a href="#" class="register-button btn btn-warning btn-lg mt-4">Register Now</a>
     </div>
 
+    <!-- Moved Highlights Section -->
+    <div class="container mt-5">
+        <h2 class="text-center text-white">Highlights of Our College & Department</h2>
+        <div class="row mt-4">
+            <div class="col-md-6 mb-4">
+                <div class="image-container">
+                    <img src="assets/images/college.jpg" alt="College Highlights" class="img-fluid rounded" style="border-radius: 20px;">
+                </div>
+                <p class="mt-3" style="color: #00ffff;"><strong style="color: #66ccff;">Our College</strong></p>
+                <p style="color:#ffffff; text-align: justify;">
+                    Kamaraj College of Engineering and Technology is established in 1998 – 1999. Our College becomes Autonomous from 2020. It is rightly named after the son of soil, Bharat Ratna Sri. K. Kamaraj who was the undisputed leader of the suppressed downtrodden and a champion of free education for Masses. Our College is approved by AICTE, New Delhi & Accredited by NBA, NAAC with “A” Grade and affiliated to Anna University Chennai. It is promoted and supported by Virudhunagar Hindu Nadar’s Mahamai Tharappus in Virudhunagar. The College attracts outstanding students from different parts of India by virtue of its discipline and infrastructure facilities. Our College is a 25 years old engineering college with currently 9 UG Programme and 2 PG Programme and with 8 Research Center departments. Out of 9 departments 7 departments (CSE, ECE, IT, MTR, EEE, Mechanical, Biotechnology) are NBA Accredited departments.
+                </p>
+            </div>
 
+            <div class="col-md-6 mb-4">
+                <div class="image-container">
+                    <img src="assets/images/dept.jpg" alt="ECE Department" class="img-fluid rounded" style="border-radius: 20px;">
+                </div>
+                <p class="mt-3" style="color: #00ffff;"><strong style="color:#66ccff;">Department of ECE</strong></p>
+                <p style="color:#ffffff; text-align: justify;">
+                    The Department of Electronics and Communication Engineering is established in the year 1998. In 2011, the department started post graduate program, M.E. degree in Communication and Networking. The Department has received reaccreditation from the NBA for the period 2023 to 2026. It is recognized as Research Center by Anna University Chennai.Also It has a Cenre of Excellence Tessolve lab for industry based learning. The Department has 13 highly qualified and well experienced faculty members. It is well equipped with fully air conditional laboratories to cater the present academic and industry requirements. The department is conducting various value added and Seminars to update students and faculty members with the knowledge of emerging fields towards industrial applications.
+                </p>
+            </div>
+        </div>
+    </div>
 
     <div class="container text-center mt-5">
         <h2 class="text-warning">Roadmap to Our College</h2>
@@ -278,4 +262,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
