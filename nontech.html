@@ -8,6 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Michroma&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
+        .welcome-message {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5em;
+            color: #ffcc00;
+            font-weight: bold;
+            margin-left: auto; /* Pushes the message to the right */
+            display: none; /* Hidden by default for mobile */
+        }
+
+        /* Show the message on desktop */
+        @media (min-width: 768px) {
+            .welcome-message {
+                display: block;
+            }
+        }
         .event-detail-card {
             background: #ffffff;
             color: #000000;
