@@ -128,121 +128,139 @@
             <p style="color: #ffffff;">ELECXY-2K25 is a National level symposium conducted by the Department of Electronics and Communication Engineering (ECE). The event is themed around the vast Galaxy, symbolizing infinite possibilities in electronics and innovation.</p>
         </div>
 
-        <div class="container text-center mt-4">
-            <h2 class="text-warning">Countdown to ELECXY-2K25</h2>
-            <div id="countdown" class="countdown-timer">
+<div class="container text-center mt-4">
+    <h2 class="text-warning">Countdown to ELECXY-2K25</h2>
+    <div id="countdown" class="countdown-timer">
+        <div class="countdown-box">
+            <span id="days">00</span>
+            <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-box">
+            <span id="hours">00</span>
+            <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-box">
+            <span id="minutes">00</span>
+            <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-box">
+            <span id="seconds">00</span>
+            <div class="countdown-label">Seconds</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateCountdown() {
+        const eventDate = new Date("March 6, 2025 00:00:00").getTime();
+        const now = new Date().getTime();
+        const timeLeft = eventDate - now;
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = String(days).padStart(2, "0");
+        document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+        document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+        document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+
+        if (timeLeft < 0) {
+            document.getElementById("countdown").innerHTML = `
                 <div class="countdown-box">
-                    <span id="days">00</span>
+                    <span>00</span>
                     <div class="countdown-label">Days</div>
                 </div>
                 <div class="countdown-box">
-                    <span id="hours">00</span>
+                    <span>00</span>
                     <div class="countdown-label">Hours</div>
                 </div>
                 <div class="countdown-box">
-                    <span id="minutes">00</span>
+                    <span>00</span>
                     <div class="countdown-label">Minutes</div>
                 </div>
                 <div class="countdown-box">
-                    <span id="seconds">00</span>
+                    <span>00</span>
                     <div class="countdown-label">Seconds</div>
                 </div>
-            </div>
-        </div>
+                <div class="event-started">Event Started!</div>
+            `;
+        }
+    }
 
-        <script>
-            function updateCountdown() {
-                const eventDate = new Date("March 6, 2025 00:00:00").getTime();
-                const now = new Date().getTime();
-                const timeLeft = eventDate - now;
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+</script>
 
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+<style>
+    .countdown-timer {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+        position: relative;
+    }
 
-                document.getElementById("days").textContent = String(days).padStart(2, "0");
-                document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-                document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-                document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    .countdown-box {
+        background-color: #1a1a2e;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        min-width: 100px;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5);
+        animation: glow 1.5s ease-in-out infinite alternate;
+    }
 
-                if (timeLeft < 0) {
-                    document.getElementById("countdown").innerHTML = `
-                        <div class="countdown-box">
-                            <span>00</span>
-                            <div class="countdown-label">Days</div>
-                        </div>
-                        <div class="countdown-box">
-                            <span>00</span>
-                            <div class="countdown-label">Hours</div>
-                        </div>
-                        <div class="countdown-box">
-                            <span>00</span>
-                            <div class="countdown-label">Minutes</div>
-                        </div>
-                        <div class="countdown-box">
-                            <span>00</span>
-                            <div class="countdown-label">Seconds</div>
-                        </div>
-                        <div class="event-started">Event Started!</div>
-                    `;
-                }
-            }
+    .countdown-box span {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #00ffff;
+        text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
 
-            setInterval(updateCountdown, 1000);
-            updateCountdown();
-        </script>
+    .countdown-label {
+        font-size: 1rem;
+        color: #ffffff;
+        margin-top: 10px;
+    }
 
-        <style>
-            .countdown-timer {
-                display: flex;
-                justify-content: center;
-                gap: 15px;
-                margin-top: 20px;
-            }
+    .event-started {
+        font-size: 2rem;
+        color: #00ffff;
+        font-weight: bold;
+        margin-top: 20px;
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
 
-            .countdown-box {
-                background-color: #333;
-                padding: 20px;
-                border-radius: 10px;
-                text-align: center;
-                min-width: 100px;
-            }
+    .text-warning {
+        color: #ffcc00 !important;
+    }
 
-            .countdown-box span {
-                font-size: 2.5rem;
-                font-weight: bold;
-                color: #ffcc00;
-            }
+    @keyframes glow {
+        0% {
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+        100% {
+            box-shadow: 0 0 15px rgba(0, 255, 255, 1), 0 0 30px rgba(0, 255, 255, 0.8);
+        }
+    }
 
-            .countdown-label {
-                font-size: 1rem;
-                color: #ffffff;
-                margin-top: 10px;
-            }
+    @media (max-width: 768px) {
+        .countdown-box {
+            min-width: 80px;
+            padding: 15px;
+        }
 
-            .event-started {
-                font-size: 2rem;
-                color: #ffcc00;
-                font-weight: bold;
-                margin-top: 20px;
-            }
+        .countdown-box span {
+            font-size: 2rem;
+        }
 
-            @media (max-width: 768px) {
-                .countdown-box {
-                    min-width: 80px;
-                    padding: 15px;
-                }
-
-                .countdown-box span {
-                    font-size: 2rem;
-                }
-
-                .countdown-label {
-                    font-size: 0.9rem;
-                }
-            }
-        </style>
+        .countdown-label {
+            font-size: 0.9rem;
+        }
+    }
+</style>
 
         <div class="row mt-4 justify-content-center">
             <div class="col-md-5 col-10 mb-4">
