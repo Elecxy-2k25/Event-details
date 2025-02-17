@@ -332,7 +332,7 @@
 <!-- Vision & Mission Section -->
 <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin: 20px 0;">
     <!-- College Vision & Mission -->
-    <div class="vision-mission-box college">
+    <div class="vision-mission-box college desktop-only">
         <h2 style="color: #FFD700;">Vision of our College</h2>
         <p>To Make this Institution the unique of its kind in the field of Research and Development activities in this part of world.</p>
         <h2 style="color: #FFD700;">Mission of our college</h2>
@@ -347,6 +347,21 @@
         <p>To impart highly innovative and technical knowledge in the field of Electronics and Communication Engineering to the urban and unreachable rural student folks through Total Quality Education.</p>
     </div>
 </div>
+<style>
+    /* Existing CSS remains unchanged */
+
+    /* Add this new CSS */
+    .desktop-only {
+        display: block;
+    }
+
+    @media (max-width: 768px) {
+        .desktop-only {
+            display: none;
+        }
+    }
+</style>
+
     
     <div class="container text-center mt-5">
         <h2 class="text-warning">Roadmap to Our College</h2>
