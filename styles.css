@@ -19,7 +19,10 @@ header {
     justify-content: flex-start;
     gap: 15px;
 }
-
+.event-logo {
+    max-width: 80px; /* Adjust size as needed */
+    height: auto;
+}
 .logo {
     width: 60px;
     height: 60px;
