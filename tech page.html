@@ -114,7 +114,7 @@
         <div class="row mt-5">
             <!-- Paper Way Galaxy - Paper Presentation -->
             <div class="col-md-4 mb-4">
-                <div class="card event-detail-card">
+                <div class="card event-detail-card" data-topics="Space Technology,Artificial Intelligence (AI),Machine Learning, Deep Learning(ML , DL),IOT and Embedded,Image processing,VLSI,Future Technologies,Open Topics from any domain">
                     <img src="assets/images/paper.jpg" class="card-img-top" alt="Paper Presentation">
                     <div class="card-body">
                         <h3 class="card-title">Paper Way Galaxy - Paper Presentation</h3>
@@ -131,7 +131,7 @@
 
             <!-- Star Tech Expo - Project Exhibition -->
             <div class="col-md-4 mb-4">
-                <div class="card event-detail-card">
+                <div class="card event-detail-card" data-topics="Renewable Energy,Robotics,Smart Cities,Healthcare Technology,Automotive Innovations,Agricultural Technology,Consumer Electronics">
                     <img src="assets/images/project.jpg" class="card-img-top" alt="Project Exhibition">
                     <div class="card-body">
                         <h3 class="card-title">Star Tech Expo - Project Exhibition</h3>
@@ -148,7 +148,7 @@
 
             <!-- Signal Sync - Word Guessing Challenge -->
             <div class="col-md-4 mb-4">
-                <div class="card event-detail-card">
+                <div class="card event-detail-card" data-topics="Networking,Programming Languages,Operating Systems,Cybersecurity,Data Structures,Cloud Computing,Blockchain">
                     <img src="assets/images/signal.jpg" class="card-img-top" alt="Word Guessing Challenge">
                     <div class="card-body">
                         <h3 class="card-title">Signal Sync</h3>
@@ -165,7 +165,7 @@
 
             <!-- GalaxIQ - Interview Based Technical Quiz -->
             <div class="col-md-4 mb-4">
-                <div class="card event-detail-card">
+                <div class="card event-detail-card" data-topics="Data Science,Artificial Intelligence,Machine Learning,Internet of Things,Cybersecurity,Software Engineering,Cloud Computing">
                     <img src="assets/images/GalaxIQ.jpg" class="card-img-top" alt="Technical Quiz">
                     <div class="card-body">
                         <h3 class="card-title">GalaxIQ - Interview Based Technical Quiz</h3>
@@ -182,7 +182,7 @@
 
             <!-- Cosmic Canvas - Creative Poster Presentation -->
             <div class="col-md-4 mb-4">
-                <div class="card event-detail-card">
+                <div class="card event-detail-card" data-topics="Environmental Sustainability,Space Exploration,Artificial Intelligence in Art,Biotechnology,Quantum Computing,Augmented Reality,Ethical Hacking">
                     <img src="assets/images/poster.jpg" class="card-img-top" alt="Creative Poster Presentation">
                     <div class="card-body">
                         <h3 class="card-title">Cosmic Canvas - Creative Poster Presentation</h3>
@@ -210,17 +210,8 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <ul>
-                        <li>Space Technology</li>
-                        <li>Artificial Intelligence (AI)</li>
-                        <li>Machine Learning, Deep Learning(ML , DL)</li>
-                        <li>IOT and Embedded</li>
-                        <li>Image processing</li>
-                        <li>VLSI</li>
-                        <li>Future Technologies</li>
-                        <li>Open Topics from any domain</li>
-
-
+                    <ul id="topicsList">
+                        <!-- Topics will be dynamically inserted here -->
                     </ul>
                 </div>
             </div>
@@ -252,34 +243,77 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const rocket = document.querySelector(".rocket");
-            setTimeout(() => {
-                if (rocket) {
-                    rocket.style.display = "none";
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const eventTopics = {
+            "Paper Way Galaxy - Paper Presentation": [
+                "Artificial Intelligence (AI)",
+                "Machine Learning, Deep Learning (ML, DL)",
+                "IOT and Embedded Systems",
+                "Image Processing",
+                "VLSI",
+                "Future Technologies",
+                "Open Topics from any domain"
+            ],
+            "Star Tech Expo - Project Exhibition": [
+                "Smart Agriculture",
+                "Automation and Robotics",
+                "Renewable Energy Solutions",
+                "IoT-based Home Automation",
+                "AI-powered Healthcare Systems",
+                "Open Topics from any domain"
+            ],
+            "Signal Sync": [
+                "Technical Jargon",
+                "Electrical Components",
+                "Programming Languages",
+                "Network Protocols",
+                "Innovations in Communication",
+                "Open Topics from any domain"
+            ],
+            "GalaxIQ - Interview Based Technical Quiz": [
+                "Aptitude and Logical Reasoning",
+                "Technical HR Questions",
+                "Data Structures & Algorithms",
+                "Circuit Analysis",
+                "VLSI Basics",
+                "Embedded Systems",
+                "General Knowledge in Engineering"
+            ],
+            "Cosmic Canvas - Creative Poster Presentation": [
+                "AI in Healthcare",
+                "Future of Space Technology",
+                "Renewable Energy Innovations",
+                "Green Technology",
+                "Human-Computer Interaction",
+                "Cybersecurity Trends"
+            ]
+        };
+
+        document.querySelectorAll(".topics-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                const eventTitle = this.closest(".card").querySelector(".card-title").innerText;
+                const topicsList = document.querySelector("#topicsModal .modal-body ul");
+                topicsList.innerHTML = ""; // Clear existing topics
+
+                if (eventTopics[eventTitle]) {
+                    eventTopics[eventTitle].forEach(topic => {
+                        const li = document.createElement("li");
+                        li.textContent = topic;
+                        topicsList.appendChild(li);
+                    });
+                } else {
+                    const li = document.createElement("li");
+                    li.textContent = "No specific topics available.";
+                    topicsList.appendChild(li);
                 }
-            }, 4000);
 
-            // Add event listeners to all "Topics" buttons
-            const topicsButtons = document.querySelectorAll(".topics-btn");
-            const topicsModal = new bootstrap.Modal(document.getElementById('topicsModal'));
-
-            topicsButtons.forEach(button => {
-                button.addEventListener("click", () => {
-                    topicsModal.show();
-                });
-            });
-
-            // Add event listeners to all event cards to update the title
-            const eventCards = document.querySelectorAll(".event-detail-card");
-            eventCards.forEach(card => {
-                card.addEventListener("click", () => {
-                    const eventTitle = card.querySelector(".card-title").innerText;
-                    document.title = `${eventTitle} - ELECXY-2K25`;
-                });
+                const topicsModal = new bootstrap.Modal(document.getElementById('topicsModal'));
+                topicsModal.show();
             });
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
