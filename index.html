@@ -56,7 +56,18 @@
             background-color: #ff6600;
             color: #fff;
         }
+        /* Add this CSS to hide the event logo in mobile view and show it in desktop view */
+@media (max-width: 767.98px) {
+    .event-logo {
+        display: none;
+    }
+}
 
+@media (min-width: 768px) {
+    .event-logo {
+        display: inline-block;
+    }
+}
         @keyframes pulse {
             0% {
                 transform: scale(1);
